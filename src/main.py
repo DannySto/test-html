@@ -50,6 +50,8 @@ TICKERS = {
     'GOOGL', 
     'IBM', 
     'META',
+    'MGC=F',
+    'ES=F',
     'HWK.BE',
     'PA2.F', 
     'YO0.F', 
