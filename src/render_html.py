@@ -149,7 +149,7 @@ def render_html_table(
     .sector { text-align:left; font-style:italic; color:#52667a;}
     a:link,
     a:visited {
-    color: #fff;   /* or whatever color you prefer */
+    color: #000;   /* or whatever color you prefer */
     text-decoration: none; /* optional, removes underline */
     }
 
