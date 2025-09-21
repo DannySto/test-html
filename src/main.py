@@ -35,8 +35,10 @@ TICKERS = {
     '49V.F', 
     'BSPA.F', 
     'RQ0.F', 
-    '98W.F', 
+    '98W.F',
+    '49V.MU',
     'NVDA',
+    'UAO.MU',
     'F8P.F',
     'ASMI.VI',
     'VA3.F', 
@@ -44,14 +46,14 @@ TICKERS = {
     'T0A.F', 
     'NMM.F', 
     'MSFT', 
-    'AAPL', 
     'AMZN', 
     'GOOGL', 
     'IBM', 
-    'INTC', 
-    'META', 
+    'META',
+    'HWK.BE',
     'PA2.F', 
     'YO0.F', 
+    'EY3.MU',
     'BTC-EUR', 
     'ETH-EUR', 
     'XRP-EUR', 
@@ -177,7 +179,7 @@ def classify(score, mode="entry"):
         elif score >= 0.6:
             return "buy"
         elif score >= 0.4:
-            return "neutral"
+            return "hold"
         elif score >= 0.2:
             return "cautious-buy"
         else:
@@ -189,7 +191,7 @@ def classify(score, mode="entry"):
         elif score >= 0.6:
             return "sell"
         elif score >= 0.4:
-            return "neutral"
+            return "hold"
         elif score >= 0.2:
             return "consider-keep"
         else:
@@ -442,15 +444,15 @@ def check_signal(df: pd.DataFrame, ticker_name: str, sector: str) -> dict:
     lower_band = rolling_mean - rolling_std * 1.5
     last_close = last["Close"]
     if last_close > upper_band.iloc[-1]:
-        band_position = "above band"
+        band_position = "above-band"
     elif last_close < lower_band.iloc[-1]:
-        band_position = "below band"
+        band_position = "below-band"
     elif last_close > rolling_mean.iloc[-1]:
-        band_position = "above median"
+        band_position = "above-median"
     elif last_close < rolling_mean.iloc[-1]:
-        band_position = "below median"
+        band_position = "below-median"
     else:
-        band_position = "at median"
+        band_position = "at-median"
 
     # RSI – Relative Strength Index
 

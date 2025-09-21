@@ -96,13 +96,13 @@ def render_html_table(
             return f"<td class='neutral'>{escape(txt)}</td>"
 
         # SMALL POSITIVE
-        elif any(word in lower_txt for word in ["buy","cautious-sell","good", "yes", "consider-keep", "normal","stable"]):
+        elif any(word in lower_txt for word in ["buy","cautious-sell","good", "yes", "consider-keep", "above-median", "normal","stable"]):
             return f"<td class='small_pos'>{escape(txt)}</td>"
 
         # POSITIVE
         elif any(word in lower_txt for word in [
             "positive","strong-buy", "don't-exit", "excellent","increasing","strong","good",
-            "above","high","overbought"
+            "above-band","high","overbought"
         ]):
             return f"<td class='positive'>{escape(txt)}</td>"
 
