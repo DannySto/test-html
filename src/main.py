@@ -140,11 +140,11 @@ def get_recommendation(symbol: str) -> dict:
             if result["total"] < 10:
                 verdict = "Insufficient data"
             elif buys > sells and buys > holds:
-                verdict = "Buy"
+                verdict = "buy"
             elif sells > buys and sells > holds:
-                verdict = "Sell"
+                verdict = "sell"
             else:
-                verdict = "Hold"
+                verdict = "hold"
 
             result["verdict"] = verdict
             return result
@@ -697,7 +697,7 @@ def check_signal(df: pd.DataFrame, ticker_name: str, sector: str) -> dict:
         "sma30": f"{above_sma30_pct:.2f}%",
         "sma50": f"{above_sma50_pct:.2f}%",
         "sma200": f"{above_sma200_pct:.2f}%",
-        "yahoo": yahoo_rec.get("verdict", "N/A"),
+        "yahoo": yahoo_rec.get("verdict", "n/a"),
     }
 
     return payload
@@ -712,7 +712,7 @@ def get_fund_name(ticker: str) -> str:
         stock = yf.Ticker(ticker)
         info = stock.info
         sector = get_sector(ticker)
-        longname = (info.get("longName") or info.get("shortName") or "N/A")
+        longname = (info.get("longName") or info.get("shortName") or "n/a")
         return longname, sector
     except Exception as e:
         return f"Error fetching data for {ticker}: {e}"
@@ -725,7 +725,7 @@ def get_sector(ticker: str) -> str:
     try:
         stock = yf.Ticker(ticker)
         info = stock.info
-        return info.get("sector", "N/A")
+        return info.get("sector", "n/a")
     except Exception as e:
         return f"Error fetching data for {ticker}: {e}"
 
