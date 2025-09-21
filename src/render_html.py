@@ -120,7 +120,7 @@ def render_html_table(
     # --- CSS block ---
     css = """
     body { font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif; padding:6px; background:linear-gradient(135deg,#f0f4f8,#d9e2ec);}
-    .card { background:white; border-radius:6px; box-shadow:0 6px 10px rgba(0,0,0,0.1); padding:4px; max-width:85%; margin:1px; overflow-x:auto;}
+    .card { background:white; border-radius:6px; box-shadow:0 6px 10px rgba(0,0,0,0.1); padding:4px; margin:1px; overflow-x:auto;}
     table { border-collapse:collapse; width:100%; border-radius:6px; overflow:hidden; vertical-align: middle;}
     caption { text-align:center; font-size:1rem; padding-bottom:7px; font-weight:400; color:#243b53;}
     th,td { color:#333332; padding:5px 6px; border-bottom:1px solid #ced9e5; text-align:center; vertical-align:top; font-size:0.7rem;}
