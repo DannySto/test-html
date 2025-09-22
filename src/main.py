@@ -50,6 +50,8 @@ TICKERS = {
     'GOOGL', 
     'IBM', 
     'META',
+    'D2G.DE',
+    '2OZA.BE',
     'MGC=F',
     'ES=F',
     'HWK.BE',
