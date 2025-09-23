@@ -62,6 +62,8 @@ scan.log
 coverage.xml
 htmlcov
 payload.json
+*.css
+*.html
 
 db.json
 log_analyse.json

@@ -61,7 +61,11 @@ TICKERS = {
     'BTC-EUR', 
     'ETH-EUR', 
     'XRP-EUR', 
-    }
+    'GC=F', 
+    'SI=F', 
+    'SGBS.AS', 
+    '2OZA.BE'
+}
 
 
 # ---------- Indicator Weights ----------
